@@ -1,0 +1,50 @@
+/* pannel */
+.sidenav {
+  height: 90%;
+  width: fit-content;
+  position: fixed;
+  z-index: 1;
+  transition: 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.6em;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1.5px 5px 0 rgba(0, 0, 0, 0.1);
+  padding: 0em;
+}
+
+/* general link background*/
+.sidenav > .link {
+  width: 100%;
+  z-index: 2;
+  padding: 0em;
+  margin: 0em;
+}
+
+/* basic link text item */
+.sidenav > .link > a {
+  margin: 0em 0em;
+  padding: 0.75em 0em;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 0.25em;
+  border-radius: 0.6em;
+  border-color: rgba(0, 0, 0, 0);
+  font-family: 'Philosopher', sans-serif;
+  letter-spacing: 0.35em;
+  color: black;
+}
+
+/* link text item selected */
+.sidenav > .link.selected > a {
+  border-color: rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+}

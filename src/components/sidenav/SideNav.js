@@ -4,14 +4,14 @@ import { Outlet, Routes } from 'react-router-dom';
 
 const SideNav = (props) => {
   return (
-    <Routes>
-      <div className="sidenav">
+    <div className="sidenav">
+      <Routes>
         <SideNavLink name="Dashboard" />
         <SideNavLink name="Clients" />
         <SideNavLink name="Appointments" />
         <SideNavLink name="Inventory" />
-      </div>
-    </Routes>
+      </Routes>
+    </div>
   );
 };
 export default SideNav;

@@ -1,25 +1,48 @@
 import React from 'react';
 import '../../css/sidenav.css';
-import { Outlet, Routes } from 'react-router-dom';
+import React, { Component } from 'react'
 
 const SideNav = (props) => {
   return (
     <div className="sidenav">
-      <Routes>
-        <SideNavLink name="Dashboard" />
-        <SideNavLink name="Clients" />
-        <SideNavLink name="Appointments" />
-        <SideNavLink name="Inventory" />
-      </Routes>
+      <SideNavLink name="Dashboard" href="#dashboard" />
+      <SideNavLink name="Clients" href="#clients" />
+      <SideNavLink name="Appointments" href="#appointments" />
+      <SideNavLink name="Inventory" href="#inventory" />
     </div>
   );
 };
 export default SideNav;
 
-const SideNavLink = (props) => {
-  return (
-    <div className="link">
-      <a href="">{props.name}</a>
-    </div>
-  );
-};
+class SideNavLink extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state.selected = '';
+  }
+
+  state = {
+    selected: ""
+ }
+
+ toggleActive() {
+    if(this.state.selected == "selected") this.state.selected = ""
+    if(this.state.selected == "") this.state.selected = "selected"
+ }
+
+  render() {
+    return (
+      <div className={[this.state.selected, "link"].join(' ')} onClick={() => redraw(this.toggleActive())}>
+        <a href={this.props.href}>{this.props.name}</a>
+      </div>
+    )
+  }
+}
+
+const redraw = (props) => {
+  
+}
+
+
+
+
